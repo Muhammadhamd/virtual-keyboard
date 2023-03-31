@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .screendiv{
+        width: 100%;
+        min-height: 400px;
+        display: flex;
+        justify-content: center;
+    }
+    .screen{
+        border: 2px solid black;
+        max-width: 700px;
+        height: 300px;
+        width: 100%;
+    }
+    .keyboard-div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .keyboard{
+        max-width: 940px;
+        width: 100%;
+        padding: 20px;
+        background-color: #5e5e5e;
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.434);
+        border-radius: 15px;
+    }
+    .keyboard .row{
+        display: flex;
+        height: 59px;
+    }
+    .keyboard .row span{
+        box-shadow: 0 0 10px -5px black;
+  background: #3e3e3e;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  line-height: 45px;
+  position: relative;
+  min-width: 50px;
+    padding: 0 16px;
+    margin: 0 5px;
+    /* transition: .1s all; if want*/
+    }
+    .keyboard .row span:active{
+        transform: scale(.95);
+        box-shadow: none;
+    }
+    .keyboard .row .shift{}
+    .keyboard .row .shift:nth-of-type(even){
+        width: 100%;
+    text-align: left;
+    }
+    .keyboard .row .spacebar{
+        max-width: 325px;
+    width: 100%;
+    }
+    .keyboard .row .alt, .ctrl ,.bookmark{
+        width: 79px;
+    }
+    .keyboard .row .backspace{
+
+    }
+    @media screen and (max-width:940px) {
+        
+    .keyboard .row:nth-child(1) span:nth-child(12),
+    .keyboard .row:nth-child(1) span:nth-child(13),
+    .keyboard .row:nth-child(2) span:nth-child(1),
+    .keyboard .row:nth-child(2) span:nth-child(12),
+    .keyboard .row:nth-child(2) span:nth-child(11),
+    .keyboard .row:nth-child(3) span:nth-child(11),
+    .keyboard .row:nth-child(3) span:nth-child(12),
+    .keyboard .row:nth-child(3) span:nth-child(13),
+    .keyboard .row:nth-child(4) span:nth-child(1),
+    .keyboard .row:nth-child(4) span:nth-child(14),
+    .keyboard .row:nth-child(4) span:nth-child(11),
+    .keyboard .row:nth-child(4) span:nth-child(2),
+    .keyboard .row:nth-child(4) span:nth-child(13),
+    .keyboard .row:nth-child(5) span:nth-child(1),
+    .keyboard .row:nth-child(5) span:nth-child(8){
+        display: none;
+    }
+    }
+</style>
+<body>
+    <div class="main-container">
+        <div class="screendiv">
+            <div class="screen">
+
+            </div>
+        </div>
+      <div class="keyboard-div">
+        <div class="keyboard">
+            <div class="row">
+                 <span class="buttons">`</span>
+                 <span class="buttons">1</span>
+                 <span class="buttons">2</span>
+                 <span class="buttons">3</span>
+                 <span class="buttons">4</span>
+                 <span class="buttons">5</span>
+                 <span class="buttons">6</span>
+                 <span class="buttons">7</span>
+                 <span class="buttons">8</span>
+                 <span class="buttons">9</span>
+                 <span class="buttons">0</span>
+                 <span class="buttons">-</span>
+                 <span class="buttons">=</span>
+                 <span class="backspace">backspace</span>
+              </div>
+               <div class="row">
+                  <span class="tab">Tab</span>
+                  <span class="buttons">q</span>
+                  <span class="buttons">w</span>
+                  <span class="buttons">e</span>
+                  <span class="buttons">r</span>
+                  <span class="buttons">t</span>
+                  <span class="buttons">y</span>
+                  <span class="buttons">u</span>
+                  <span class="buttons">i</span>
+                  <span class="buttons">o</span>
+                  <span class="buttons">p</span>
+                  <span class="buttons">[</span>
+                  <span class="buttons">]</span>
+                  <span class="enter">Enter</span>
+              </div>
+              <div class="row">
+              <span class="capslock">CapsLock</span>
+                  <span class="buttons">a</span>
+                  <span class="buttons">s</span>
+                  <span class="buttons">d</span>
+                  <span class="buttons">f</span>
+                  <span class="buttons">g</span>
+                  <span class="buttons">h</span>
+                  <span class="buttons">j</span>
+                  <span class="buttons">k</span>
+                  <span class="buttons">l</span>
+                  <span class="buttons">;</span>
+                  <span class="buttons">'</span>
+                  <span class="buttons">\</span>
+              </div>
+              <div class="row">
+                  <span class="shift">
+                      <i class="fa fa-arrow-up"></i>
+                  </span>
+                  <span class="buttons">|</span>
+                  <span class="buttons">z</span>
+                  <span class="buttons">x</span>
+                  <span class="buttons">c</span>
+                  <span class="buttons">v</span>
+                  <span class="buttons">b</span>
+                  <span class="buttons">n</span>
+                  <span class="buttons">m</span>
+                  <span class="buttons">,</span>
+                  <span class="buttons"><></span>
+                  <span class="buttons">.</span>
+                  <span class="buttons">?</span>
+                  <span class="shift">
+                      <i class="fa fa-arrow-up"></i>
+                      shift
+                  </span>
+              </div>
+              <div class="row">
+                 
+                  <span class="ctrl">Ctrl</span>
+                  <span class="windows"><i class="fa fa-windows"></i></span>
+                  <span class="alt">Alt</span>
+                  <span class="spacebar"></span>
+                  <span class="alt">Alt</span>
+                  <span class="windows"><i class="fa fa-windows"></i></span>
+                  <span class="bookmark"><i class="fa fa-sticky-note"></i></span>
+                  <span class="ctrl">Ctrl</span>
+          </div>
+      </div>
+      </div>
+
+    <script>
+        const buttons = document.querySelectorAll(".buttons"),
+               screen = document.querySelector(".screen"),
+               capsLock = document.querySelector(".capslock"),
+               backspace = document.querySelector(".backspace");
+
+
+            //    for backspace button
+            backspace.addEventListener("click",
+            function(){
+                let delScreen =document.querySelector(".screen").innerHTML;
+                delScreen = delScreen.substr(0,delScreen.length-1)
+                document.querySelector(".screen").innerHTML = delScreen;
+            })
+
+            //    for each button
+        buttons.forEach((button)=>{
+
+            //if the cap is true words are capital if its false the words are small
+            let cap = true;
+            capsLock.addEventListener("click",
+            function(){
+                if(cap){
+                    let innerWord = button.innerHTML,
+                 capitalWord = innerWord.toUpperCase();
+
+                 button.innerHTML = capitalWord;
+                 cap = false;
+                }else{
+                    let innerWord = button.innerHTML,
+                 smallWord = innerWord.toLowerCase();
+
+                 button.innerHTML = smallWord;
+                    cap=true;
+                }
+            })
+            // to input value of each button
+            button.addEventListener("click",
+            function(){
+                screen.innerHTML += button.innerHTML;
+            });
+        })
+    </script>
+</body>
+</html>

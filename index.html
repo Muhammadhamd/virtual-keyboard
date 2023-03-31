@@ -15,7 +15,7 @@
     }
     .screendiv{
         width: 100%;
-        min-height: 400px;
+        min-height: 302px;
         display: flex;
         justify-content: center;
     }
@@ -31,7 +31,7 @@
         justify-content: center;
     }
     .keyboard{
-        max-width: 940px;
+        max-width: 950px;
         width: 100%;
         padding: 20px;
         background-color: #5e5e5e;
@@ -42,7 +42,7 @@
         display: flex;
         height: 59px;
     }
-    .keyboard .row span{
+    .keyboard .row button{
         box-shadow: 0 0 10px -5px black;
   background: #3e3e3e;
   height: 50px;
@@ -57,10 +57,20 @@
     padding: 0 16px;
     margin: 0 5px;
     /* transition: .1s all; if want*/
+    border: none;
     }
-    .keyboard .row span:active{
+    .keyboard .row button:active{
         transform: scale(.95);
         box-shadow: none;
+    }
+    .keyboard .row .capslock .light{
+        background-color: #6e4d4b;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 8px;
     }
     .keyboard .row .shift{}
     .keyboard .row .shift:nth-of-type(even){
@@ -77,115 +87,201 @@
     .keyboard .row .backspace{
 
     }
-    @media screen and (max-width:940px) {
-        
-    .keyboard .row:nth-child(1) span:nth-child(12),
-    .keyboard .row:nth-child(1) span:nth-child(13),
-    .keyboard .row:nth-child(2) span:nth-child(1),
-    .keyboard .row:nth-child(2) span:nth-child(12),
-    .keyboard .row:nth-child(2) span:nth-child(11),
-    .keyboard .row:nth-child(3) span:nth-child(11),
-    .keyboard .row:nth-child(3) span:nth-child(12),
-    .keyboard .row:nth-child(3) span:nth-child(13),
-    .keyboard .row:nth-child(4) span:nth-child(1),
-    .keyboard .row:nth-child(4) span:nth-child(14),
-    .keyboard .row:nth-child(4) span:nth-child(11),
-    .keyboard .row:nth-child(4) span:nth-child(2),
-    .keyboard .row:nth-child(4) span:nth-child(13),
-    .keyboard .row:nth-child(5) span:nth-child(1),
-    .keyboard .row:nth-child(5) span:nth-child(8){
+
+
+    /* keyboard for mobile and tabltes */
+    .mob{
         display: none;
     }
+    .mob .row{
+        display: flex;
+        justify-content: center;
+    }
+    .mob .row button{
+        font-size: 15px;
+    min-width: 18px;
+    height: 35px;
+    line-height: normal;
+    margin: 2px;
+}
+    
+    @media screen and (max-width:940px) {
+        
+    /* .keyboard .row:nth-child(1) button:nth-child(12),
+    .keyboard .row:nth-child(1) button:nth-child(13),
+    .keyboard .row:nth-child(2) button:nth-child(1),
+    .keyboard .row:nth-child(2) button:nth-child(12),
+    .keyboard .row:nth-child(2) button:nth-child(11),
+    .keyboard .row:nth-child(3) button:nth-child(11),
+    .keyboard .row:nth-child(3) button:nth-child(12),
+    .keyboard .row:nth-child(3) button:nth-child(13),
+    .keyboard .row:nth-child(4) button:nth-child(1),
+    .keyboard .row:nth-child(4) button:nth-child(14),
+    .keyboard .row:nth-child(4) button:nth-child(11),
+    .keyboard .row:nth-child(4) button:nth-child(2),
+    .keyboard .row:nth-child(4) button:nth-child(13),
+    .keyboard .row:nth-child(5) button:nth-child(1),
+    .keyboard .row:nth-child(5) button:nth-child(8){ */
+        .comp{
+        display: none;
+    }
+    .mob{
+        display: block;
+    }
+    }
+    @media screen and (max-width:450px) {
+        .mob .row button{
+        font-size: 15px;
+    padding: 6px;
+    min-width: 18px;
+    height: 35px;
+    line-height: normal;
+    margin: 2px;
+}
     }
 </style>
 <body>
     <div class="main-container">
         <div class="screendiv">
-            <div class="screen">
+            <div class="screen" contenteditable="true">
 
             </div>
         </div>
       <div class="keyboard-div">
-        <div class="keyboard">
+        <div class="keyboard comp">
             <div class="row">
-                 <span class="buttons">`</span>
-                 <span class="buttons">1</span>
-                 <span class="buttons">2</span>
-                 <span class="buttons">3</span>
-                 <span class="buttons">4</span>
-                 <span class="buttons">5</span>
-                 <span class="buttons">6</span>
-                 <span class="buttons">7</span>
-                 <span class="buttons">8</span>
-                 <span class="buttons">9</span>
-                 <span class="buttons">0</span>
-                 <span class="buttons">-</span>
-                 <span class="buttons">=</span>
-                 <span class="backspace">backspace</span>
+                 <button class="buttons">`</button>
+                 <button class="buttons">1</button>
+                 <button class="buttons">2</button>
+                 <button class="buttons">3</button>
+                 <button class="buttons">4</button>
+                 <button class="buttons">5</button>
+                 <button class="buttons">6</button>
+                 <button class="buttons">7</button>
+                 <button class="buttons">8</button>
+                 <button class="buttons">9</button>
+                 <button class="buttons">0</button>
+                 <button class="buttons">-</button>
+                 <button class="buttons">=</button>
+                 <button class="backspace">backspace</button>
               </div>
                <div class="row">
-                  <span class="tab">Tab</span>
-                  <span class="buttons">q</span>
-                  <span class="buttons">w</span>
-                  <span class="buttons">e</span>
-                  <span class="buttons">r</span>
-                  <span class="buttons">t</span>
-                  <span class="buttons">y</span>
-                  <span class="buttons">u</span>
-                  <span class="buttons">i</span>
-                  <span class="buttons">o</span>
-                  <span class="buttons">p</span>
-                  <span class="buttons">[</span>
-                  <span class="buttons">]</span>
-                  <span class="enter">Enter</span>
+                  <button class="tab">Tab</button>
+                  <button class="buttons">q</button>
+                  <button class="buttons">w</button>
+                  <button class="buttons">e</button>
+                  <button class="buttons">r</button>
+                  <button class="buttons">t</button>
+                  <button class="buttons">y</button>
+                  <button class="buttons">u</button>
+                  <button class="buttons">i</button>
+                  <button class="buttons">o</button>
+                  <button class="buttons">p</button>
+                  <button class="buttons">[</button>
+                  <button class="buttons">]</button>
+                  <button class="enter">Enter</button>
               </div>
               <div class="row">
-              <span class="capslock">CapsLock</span>
-                  <span class="buttons">a</span>
-                  <span class="buttons">s</span>
-                  <span class="buttons">d</span>
-                  <span class="buttons">f</span>
-                  <span class="buttons">g</span>
-                  <span class="buttons">h</span>
-                  <span class="buttons">j</span>
-                  <span class="buttons">k</span>
-                  <span class="buttons">l</span>
-                  <span class="buttons">;</span>
-                  <span class="buttons">'</span>
-                  <span class="buttons">\</span>
+              <button class="capslock">CapsLock <div class="light"></div></button>
+                  <button class="buttons">a</button>
+                  <button class="buttons">s</button>
+                  <button class="buttons">d</button>
+                  <button class="buttons">f</button>
+                  <button class="buttons">g</button>
+                  <button class="buttons">h</button>
+                  <button class="buttons">j</button>
+                  <button class="buttons">k</button>
+                  <button class="buttons">l</button>
+                  <button class="buttons">;</button>
+                  <button class="buttons">'</button>
+                  <button class="buttons">\</button>
               </div>
               <div class="row">
-                  <span class="shift">
+                  <button class="shift">
                       <i class="fa fa-arrow-up"></i>
-                  </span>
-                  <span class="buttons">|</span>
-                  <span class="buttons">z</span>
-                  <span class="buttons">x</span>
-                  <span class="buttons">c</span>
-                  <span class="buttons">v</span>
-                  <span class="buttons">b</span>
-                  <span class="buttons">n</span>
-                  <span class="buttons">m</span>
-                  <span class="buttons">,</span>
-                  <span class="buttons"><></span>
-                  <span class="buttons">.</span>
-                  <span class="buttons">?</span>
-                  <span class="shift">
+                  </button>
+                  <button class="buttons">|</button>
+                  <button class="buttons">z</button>
+                  <button class="buttons">x</button>
+                  <button class="buttons">c</button>
+                  <button class="buttons">v</button>
+                  <button class="buttons">b</button>
+                  <button class="buttons">n</button>
+                  <button class="buttons">m</button>
+                  <button class="buttons">,</button>
+                  <button class="buttons"><></button>
+                  <button class="buttons">.</button>
+                  <button class="buttons">?</button>
+                  <button class="shift">
                       <i class="fa fa-arrow-up"></i>
                       shift
-                  </span>
+                  </button>
               </div>
               <div class="row">
                  
-                  <span class="ctrl">Ctrl</span>
-                  <span class="windows"><i class="fa fa-windows"></i></span>
-                  <span class="alt">Alt</span>
-                  <span class="spacebar"></span>
-                  <span class="alt">Alt</span>
-                  <span class="windows"><i class="fa fa-windows"></i></span>
-                  <span class="bookmark"><i class="fa fa-sticky-note"></i></span>
-                  <span class="ctrl">Ctrl</span>
+                  <button class="ctrl">Ctrl</button>
+                  <button class="windows"><i class="fa fa-windows"></i></button>
+                  <button class="alt">Alt</button>
+                  <button class="spacebar"></button>
+                  <button class="alt">Alt</button>
+                  <button class="windows"><i class="fa fa-windows"></i></button>
+                  <button class="bookmark"><i class="fa fa-sticky-note"></i></button>
+                  <button class="ctrl">Ctrl</button>
           </div>
+      </div>
+      <div class="keyboard mob">
+        <div class="row">
+            <button class="buttons">1</button>
+            <button class="buttons">2</button>
+            <button class="buttons">3</button>
+            <button class="buttons">4</button>
+            <button class="buttons">5</button>
+            <button class="buttons">6</button>
+            <button class="buttons">7</button>
+            <button class="buttons">8</button>
+            <button class="buttons">9</button>
+            <button class="buttons">0</button>
+        </div>
+        <div class="row">
+            <button class="buttons">q</button>
+            <button class="buttons">w</button>
+            <button class="buttons">e</button>
+            <button class="buttons">r</button>
+            <button class="buttons">t</button>
+            <button class="buttons">y</button>
+            <button class="buttons">u</button>
+            <button class="buttons">i</button>
+            <button class="buttons">o</button>
+            <button class="buttons">p</button>
+        </div>
+        <div class="row">
+            <button class="buttons">a</button>
+            <button class="buttons">s</button>
+            <button class="buttons">d</button>
+            <button class="buttons">f</button>
+            <button class="buttons">g</button>
+            <button class="buttons">h</button>
+            <button class="buttons">j</button>
+            <button class="buttons">k</button>
+            <button class="buttons">l</button>
+        </div>
+        <div class="row">
+            <button class="capslock"><i class="fa fa-arrow-circle-up"></i> </button>
+            <button class="buttons">z</button>
+            <button class="buttons">x</button>
+            <button class="buttons">c</button>
+            <button class="buttons">v</button>
+            <button class="buttons">b</button>
+            <button class="buttons">n</button>
+            <button class="buttons">m</button>
+            <button class="backspace"><i class="fa fa-crosshairs"></i></button>
+        </div>
+        <div class="row">
+            <button class="buttons">sym</button>
+            <button class="buttons"><i class="fa fa-gear"></i></button>
+            <button class="spacebar">space</button>
+            <button class="enter">done</button>
+        </div>
       </div>
       </div>
 
@@ -193,9 +289,18 @@
         const buttons = document.querySelectorAll(".buttons"),
                screen = document.querySelector(".screen"),
                capsLock = document.querySelector(".capslock"),
-               backspace = document.querySelector(".backspace");
+               backspace = document.querySelector(".backspace"),
+               enterkey = document.querySelector(".enter"),
+               spaceBar = document.querySelector(".spacebar");
 
 
+
+
+            //    for enter key function
+            enterkey.addEventListener("click",
+            function(){
+                screen.innerHTML +="<br>"
+            })
             //    for backspace button
             backspace.addEventListener("click",
             function(){
@@ -216,12 +321,15 @@
                  capitalWord = innerWord.toUpperCase();
 
                  button.innerHTML = capitalWord;
+
+                 capsLock.querySelector(".light").style ="background-color:yellow";
                  cap = false;
                 }else{
                     let innerWord = button.innerHTML,
                  smallWord = innerWord.toLowerCase();
 
                  button.innerHTML = smallWord;
+                 capsLock.querySelector(".light").style ="";
                     cap=true;
                 }
             })
@@ -231,6 +339,16 @@
                 screen.innerHTML += button.innerHTML;
             });
         })
+
+
+
+        // for space key function
+
+        spaceBar.addEventListener("click",
+        function(){
+            screen.innerHTML +="&nbsp;"
+        })
+
     </script>
 </body>
 </html>
